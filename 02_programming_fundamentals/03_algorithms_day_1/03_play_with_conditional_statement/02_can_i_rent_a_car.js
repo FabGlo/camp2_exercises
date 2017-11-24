@@ -20,7 +20,7 @@ let canRentACar= false;
 // Your code here:
 
 
-if(driverLicense >= "B" && licenceIssued <= 2015 && numberOfAccident === 0 || bonus >= 0.7) {
+if(driverLicense >= "B" && licenceIssued <= 2015 && (numberOfAccident === 0 || bonus >= 0.7)) {
   canRentACar = true;
 }
 else {
