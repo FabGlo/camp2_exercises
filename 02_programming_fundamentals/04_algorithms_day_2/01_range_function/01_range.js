@@ -4,9 +4,23 @@
 // This function should work in both ascending or descending order.
 
 // Complete this function.
-function range() {
-
+function range(beginNumber , endNumber) {
+  const array = [];
+  if (endNumber > beginNumber) {
+    for (let i= beginNumber ; i <= endNumber ; i++){
+      array.push(i);
+    }
+    return array;
+  }
+  else {
+    for (let j= beginNumber ; j >= endNumber ; j--){
+      array.push(j);
+    }
+    return array;
+  }
 }
+const ascArray = range (1,4);
+const descArray = range (4,1);
 
 // Do not remove last lines, it is for tests
 // eslint-disable-next-line
