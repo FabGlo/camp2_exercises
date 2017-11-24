@@ -9,9 +9,26 @@
    YOU MUST USE array.map
 */
 
-function fizzBuzz(list) {
-
+function fizzBuzz(list){
+  for (let i = 0 ; i < list.length ; i++){
+    if (list[i] % 3 === 0 && list[i] % 5 === 0){
+      list.map("FizzBuzz");
+    }
+    else if (list[i] % 3 === 0){
+      list.map("Fizz");
+    }
+    else if (list[i] % 5 === 0) {
+      list.map("Buzz");
+    }
+    else{
+      list.map(list[i]);
+    }
+  }
+  return list;
 }
+
+const list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+console.log(fizzBuzz(list));
 
 
 module.exports = fizzBuzz;
