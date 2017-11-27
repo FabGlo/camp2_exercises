@@ -34,8 +34,23 @@
 // ```
 
 function pattern(size) {
-  // Your code here
+  let line = "";
+  let lineReturn = "";
+  for (let i = 1 ; i <= size ; i++){
+    for (let j = 1 ; j <= i ; j++){
+      line = line + i;
+    }
+    if (i<size){
+      lineReturn = lineReturn + line + "\n";
+    }      else {
+      lineReturn = lineReturn + line;
+    }
+    line = "";
+  }
+  return lineReturn;
 }
+
+
 
 // Do not remove last lines, it is for tests
 // eslint-disable-next-line
