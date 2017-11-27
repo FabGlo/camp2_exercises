@@ -8,14 +8,14 @@
 // Note: The function accepts an integer and returns an integer
 
 function squareDigits(number) {
-  let arrayNumber = (""+number).split("");
+  let arrayNumber = number.toString().split("");
   let squaredNumber = [];
   let result;
   for (let i=0 ; i < arrayNumber.length ; i++){
     squaredNumber.push(arrayNumber[i] * arrayNumber[i]);
     result = squaredNumber.join("");
   }
-  return parseInt(result);
+  return parseInt(result,10);
 }
 
 // Do not remove last lines, it is for tests
