@@ -41,12 +41,33 @@ const MORSE_CODE = {
   "-....": "6",
   "--...": "7",
   "---..": "8",
-  "----.": "9"
+  "----.": "9",
 };
 
 function decodeMorse(morse) {
-  // Your code here
+  let cellMorse = morse.split(" ");
+  let result = "";
+  let count = 0;
+  for (let i=0 ; i < cellMorse.length ; i++){
+    if (cellMorse[i]==="" && count === 0){
+      result = result + " ";
+      count=1;
+    }
+    else if
+    (cellMorse[i]==="" && count ===1){
+      count=0;
+    }
+    else {
+      result = result + MORSE_CODE[cellMorse[i]];
+    }
+  }
+  return result;
 }
+//}
+
+//decodeMorse('.... . -.--   .--- ..- -.. .');
+
+
 
 // Do not remove last lines, it is for tests
 // eslint-disable-next-line
