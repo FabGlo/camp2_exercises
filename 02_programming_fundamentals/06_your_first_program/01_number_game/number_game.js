@@ -9,7 +9,7 @@ const reader = readline.createInterface({
 
 function test(inputNumber) {
   if (parseInt(inputNumber,10) === mysteryNumber){
-    console.log("Well done!");
+    console.log("You won!");
     reader.close();
   }
   else {
@@ -30,23 +30,3 @@ function test(inputNumber) {
 }
 
 reader.question("What is the mysteryNumber (between 1 and 100)? ", test);
-
-
-
-// ```const readline = require('readline');
-//
-// const reader = readline.createInterface({
-//   input: process.stdin,
-//   output: process.stdout
-// });
-//
-// function shouldBeFine(answer) {
-//   if (answer === "fine") {
-//     console.log("Great!");
-//     reader.close();
-//   } else {
-//     reader.question("How are you, really?", shouldBeFine);
-//   }
-// }
-//
-// reader.question("How are you?", shouldBeFine);```
