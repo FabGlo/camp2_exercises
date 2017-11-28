@@ -1,4 +1,4 @@
-let mysteryNumber = Math.round(Math.random()*100);
+let mysteryNumber = Math.round(Math.random()*99)+1;
 let count = 0;
 
 const readline = require("readline");
@@ -9,6 +9,7 @@ const reader = readline.createInterface({
 });
 
 function test(inputNumber) {
+  count += +1;
   if (parseInt(inputNumber,10) === mysteryNumber){
     if (count ===1){
       console.log("Amazing!!!");
@@ -32,9 +33,8 @@ function test(inputNumber) {
     else if (inputNumber < mysteryNumber){
       console.log ("too low");
     }
-    count += +1;
     reader.question("What is the mysteryNumber (between 1 and 100)? ", test);
   }
 }
-
+console.log(mysteryNumber);
 reader.question("What is the mysteryNumber (between 1 and 100)? ", test);
