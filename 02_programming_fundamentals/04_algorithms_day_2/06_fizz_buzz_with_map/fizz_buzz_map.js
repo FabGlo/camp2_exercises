@@ -10,25 +10,23 @@
 */
 
 function fizzBuzz(list){
-  for (let i = 0 ; i < list.length ; i++){
-    if (list[i] % 3 === 0 && list[i] % 5 === 0){
-      list.map("FizzBuzz");
-    }
-    else if (list[i] % 3 === 0){
-      list.map("Fizz");
-    }
-    else if (list[i] % 5 === 0) {
-      list.map("Buzz");
-    }
-    else{
-      list.map(list[i]);
-    }
-  }
-  return list;
+  let array=[];
+  array=list.map(fizzed);
+  return array;
 }
 
-const list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
-console.log(fizzBuzz(list));
+function fizzed (number){
+  if (number % 3 === 0 && number % 5 === 0){
+    return "FizzBuzz";
+  }
+  else if (number % 3 === 0){
+    return "Fizz";
+  }
+  else if (number % 5 === 0) {
+    return "Buzz";
+  }
+  else return number;
+}
 
 
 module.exports = fizzBuzz;
