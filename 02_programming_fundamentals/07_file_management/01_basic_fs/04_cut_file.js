@@ -29,8 +29,7 @@ function copyPaste(sourceFilename, targetFilename){
 
 
 function cutPaste(sourceFilename, targetFilename){
-  copyPaste(sourceFilename, targetFilename);
-  deleteFile(sourceFilename);
+  return copyPaste(sourceFilename, targetFilename) && deleteFile(sourceFilename);
 }
 
 module.exports = cutPaste;

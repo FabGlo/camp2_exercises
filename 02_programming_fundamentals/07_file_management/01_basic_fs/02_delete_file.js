@@ -1,15 +1,16 @@
 const fs = require("fs");
 
 function deleteFile (filenameToDelete){
-fs.unlink(
-  filenameToDelete,
-  (error) => {
-    if (error){
-      return console.warn(error)
-    }
+  if (isAFile(filenameToDelete)){
+    fs.unlinkSync(filenameToDelete);
+    return true;
   }
-)
-return console.log("file deleted");
+  return false;
+}
+
+function isAFile(filenameToDelete){
+  const stats = fs.lstatSync(filenameToDelete);
+  return stats.isFile();
 }
 
 module.exports = deleteFile
