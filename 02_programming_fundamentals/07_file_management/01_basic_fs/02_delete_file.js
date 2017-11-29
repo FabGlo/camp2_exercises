@@ -1,6 +1,15 @@
-// Add a function `deleteFile` which takes a `path` as input and remove the file
-// if it's a file (do not remove a folder).
-//
-// The function returns a boolean indicating if it successfully removed the file.
+const fs = require("fs");
+
+function deleteFile (filenameToDelete){
+fs.unlink(
+  filenameToDelete,
+  (error) => {
+    if (error){
+      return console.warn(error)
+    }
+  }
+)
+return console.log("file deleted");
+}
 
 module.exports = deleteFile
