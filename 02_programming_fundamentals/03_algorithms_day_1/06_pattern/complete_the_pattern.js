@@ -1,20 +1,18 @@
 // Modify this value to test with other values
 const numberOfLine = 5;
-// Your code here ⬇
-function range(num){
+
+function pattern(number){
   let line="";
-  for(let i=num ; i>0 ; i--){
-    line += + i;
+  for (let i = 0 ; i < number ; i++){
+    for(let j=number ; j>i ; j--){
+      line += j ;
+    }
+    if (i !== 0) {
+      line += "\n";
+    }
   }
-  return parseInt(line,10);
+  return line;
 }
+const p = pattern;
 
-function table(num2, range){
-  let result= "";
-  for(let j = num2 ; j > 0 ; j--){
-    result= result + range(num2)+"\n";
-  }
-  return result;
-}
-
-console.log(table(numberOfLine, range));
+module.exports=pattern;
