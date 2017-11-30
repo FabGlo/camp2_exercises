@@ -9,9 +9,20 @@
 
 
 function fact(n) {
-  // your code here
+  let mult = 1;
+  if (n > 0){
+    for(let i = n ; i > 0 ; i--){
+      mult = mult * i;
+    }
+    return mult;
+  }
+  else if (n === 0){
+    return mult;
+  }
+  return null;
 }
 
 
+console.log(fact(5));
 // do not remove this line, it is for tests
 module.exports = fact;

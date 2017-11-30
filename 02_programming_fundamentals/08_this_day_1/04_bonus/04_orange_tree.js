@@ -18,7 +18,7 @@ const orangeTree = {
     this.age ++;
     if(this.age < 10){
       this.height += 25;
-      if(this.age >= 5 && this.age < 10){
+      if(this.age >= 5){
         this.oranges = 10;
       }
       return this;
@@ -37,23 +37,26 @@ const orangeTree = {
       return this;
     }
     else if(this.age >= 50 && this.age <= 60){
-      this.alive = Math.random() <= 0.05;
+      this.alive = Math.random() < 0.05;
       return this;
     }
     else if(this.age > 60 && this.age <= 70){
-      this.alive = Math.random() <= 0.15;
+      this.alive = Math.random() < 0.2;
       return this;
     }
     else if(this.age > 70 && this.age <= 80){
-      this.alive = Math.random() <= 0.3;
+      this.alive = Math.random() < 0.3;
       return this;
     }
     else if(this.age > 80 && this.age <= 90){
-      this.alive = Math.random() <= 0.6;
+      this.alive = Math.random() < 0.4;
       return this;
     }
     else if(this.age > 90 && this.age <= 100){
-      this.alive = Math.random() > 0.6;
+      this.alive = Math.random() < 0.7;
+      return this;
+    }
+    else if(this.age === 100){
       return this;
     }
   },
@@ -61,6 +64,7 @@ const orangeTree = {
     this.height = 0;
     this.age = 0;
     this.oranges = 0;
+    this.alive = true;
     return this;
   },
 }
