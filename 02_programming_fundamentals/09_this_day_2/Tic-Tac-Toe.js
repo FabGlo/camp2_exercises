@@ -117,7 +117,6 @@ function flattenArray(arrayOfArray) {
 
 function gameIsFinished() {
   const allValues = flattenArray(Object.values(state));
-
   return allValues.every(isNotNull)
 }
 
@@ -127,7 +126,6 @@ function hasWinner() {
       line
       .map((coordinate) => state[coordinate.letter][coordinate.digit])
       .join("");
-
     return pattern === "XXX" || pattern === "OOO";
   }
 
