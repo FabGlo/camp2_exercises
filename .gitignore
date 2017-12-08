@@ -2,3 +2,5 @@ node_modules
 *.result
 brussels.weather
 coverage
+.env_var
+.env.example
