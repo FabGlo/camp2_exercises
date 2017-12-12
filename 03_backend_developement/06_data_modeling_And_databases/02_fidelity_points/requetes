@@ -1,0 +1,21 @@
+Find the three oldest client's name
+select distinct(client_name), purchase_date from purchases order by purchase_date asc limit 3;
+
+Find all clients that have not made a purchase in the last two months
+select client_name, MAX(purchase_date) from purchases where purchase_date<NOW() - interval '2 months' group by client_name;
+
+Find all clients that have not made a purchase in the last month but are big customer (have purchased more than 3 items in one purchase previously)
+select distinct(client_name),max(purchase_date) from purchases p2
+where purchase_date<NOW() - interval '1 months'
+and number_of_items>3
+and not exists
+(select 1 from purchases p1
+where purchase_date>NOW() - interval '1 months'
+and p1.id=p2.id)
+group by p2.client_name;
+
+Find the best client (the one who spent the most money in one purchase)
+select max (euros_spent), client_name from purchases group by client_name order by max (euros_spent) desc limit 1;
+
+BONUS, find how much money our store made in the summer
+select sum(euros_spent) from purchases where purchase_date between '2017-07-21 00:00:00.000' and '2017-09-23 00:00:00.000';
