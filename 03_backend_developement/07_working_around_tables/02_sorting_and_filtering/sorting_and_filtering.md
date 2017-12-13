@@ -1,18 +1,18 @@
 --# Sorting And Filtering
 
 --1. Write a query in SQL to display the full name (first and last name), and salary for those employees who earn below 6000.
-select first_name,last_name,salary 
-from employees 
+select first_name,last_name,salary
+from employees
 where salary < 6000;
 
 --2. Write a query in SQL to display the first and last_name, department number and salary for those employees who earn more than 8000.
-select first_name,last_name,salary, department_id 
-from employees 
+select first_name,last_name,salary, department_id
+from employees
 where salary > 8000;
 
 --3. Write a query in SQL to display the first and last name, and department number for all employees whose last name is "McEwen".
-select first_name,last_name,salary, department_id 
-from employees 
+select first_name,last_name,salary, department_id
+from employees
 where last_name = 'McEwen';
 
 --4. Write a query in SQL to display all the information for all employees without any department number.
@@ -31,7 +31,7 @@ where name = 'Marketing';
 select concat(first_name,' ',last_name) as Name, hire_date, salary, department_id
 from employees
 where first_name not like '%M%'
-order by department_id asc; 
+order by department_id asc;
 
 --7. Write a query in SQL to display all the information of employees whose salary is in the range of 8000 and 12000 and
 --commission is not null or department number is except the number 4, 12 and 7 and they have been hired before June
@@ -40,7 +40,7 @@ select *
 from employees
 where salary between 8000 and 12000
 and (commission_pct is not null or department_id not in (4,12,7))
-and hire_date < '2017-06-01';
+and hire_date < '1987-06-01';
 
 --8. Write a query in SQL to display the full name (first and last name), and salary for all employees who does not earn
 --any commission.
@@ -132,7 +132,7 @@ from employees
 where department_id in ('3','4','9');
 
 --22. Write a query in SQL to display the ID for those employees who did two or more jobs in the past.
-select employee_id, count(employee_id) 
+select employee_id, count(employee_id)
 from job_history
 group by employee_id
 having count(employee_id) >= 2;
