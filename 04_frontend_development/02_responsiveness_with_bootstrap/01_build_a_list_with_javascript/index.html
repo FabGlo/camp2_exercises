@@ -19,7 +19,6 @@
           <h1>List of french departments</h1>
 
           <ul id="department-list" class="list-group">
-            <!-- Your list will end up here -->
           </ul>
 
         </div>
@@ -29,6 +28,8 @@
     <script>
       // Your code here
       // the departments are accessible in a global variable named DEPARTMENTS
+      document.querySelector("ul").innerHTML = DEPARTMENTS.map((department)=>
+      "<li>" + department + "</li>").join("");
     </script>
   </body>
 </html>

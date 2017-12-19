@@ -34,7 +34,21 @@
     </div>
     <script src="./departments.js"></script>
     <script>
-      // Your code here
+      function departmentArray(department){
+        document.querySelector("ul").innerHTML = department.map((department) =>
+        "<li>" + department + "</li> ").join("");
+      }
+
+      departmentArray(DEPARTMENTS);
+
+      const myInput = document.querySelector("#search-department")
+      myInput.addEventListener("input",function(){
+        console.log(myInput.value);
+        departmentArray(DEPARTMENTS.filter(function(department){
+          return department.toUpperCase().includes(myInput.value.toUpperCase())})
+        );
+      })
+
     </script>
   </body>
 </html>
