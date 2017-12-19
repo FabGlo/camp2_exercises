@@ -1,0 +1,19 @@
+table tr:nth-child(even)
+    {
+      background-color: red;
+    }
+
+.important
+  {
+    font-weight: bold;
+  }
+
+.emphasis
+  {
+    font-style: italic;
+  }
+
+.important.emphasis
+  {
+    background-color: red;
+  }
