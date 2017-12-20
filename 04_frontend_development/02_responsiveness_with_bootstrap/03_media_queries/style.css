@@ -1,0 +1,20 @@
+@media (min-width: 680px){
+  body{
+  background-image:url("charmander.png");
+  background-repeat:no-repeat;
+}
+}
+
+@media (min-width: 860px){
+  body{
+  background-image:url("charmeleon.png");
+  background-repeat:no-repeat;
+}
+}
+
+@media (min-width: 1080px){
+  body{
+  background-image:url("charizard.png");
+  background-repeat:no-repeat;
+}
+}
