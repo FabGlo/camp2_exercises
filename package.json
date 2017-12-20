@@ -15,10 +15,14 @@
   },
   "homepage": "https://github.com/fewlinesco/camp2_exercises#readme",
   "dependencies": {
+    "bootstrap": "^4.0.0-beta.2",
+    "brew": "0.0.8",
     "express": "^4.16.2",
+    "install": "^0.10.2",
     "pg": "^7.4.0",
     "phoenix-channels": "^1.0.0",
-    "request": "^2.83.0"
+    "request": "^2.83.0",
+    "ruby": "^0.6.1"
   },
   "devDependencies": {
     "jest": "^21.2.1"
