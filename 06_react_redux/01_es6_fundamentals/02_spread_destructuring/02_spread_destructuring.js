@@ -6,8 +6,9 @@ function go(options) {
 
   console.log("speed=", speed, "hyperdrive:", hyperdrive, "frobnifier:", frobnifier);
 }
+const {enable}=
 
-go({ speed: 5 });
+go({ speed: 5});
 
 function lastIndexOf(arr, elt, start) {
   for (let i = start - 1; i >= 0; i--) {
