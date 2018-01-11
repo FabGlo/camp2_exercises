@@ -59,9 +59,10 @@ deleteTask(index){
               <div className={"classCheck" + task.check}>
                 <span>{task.value}</span>
                 <input type="checkbox" checked={task.check} onChange={() => this.strikeThrough(index)}/>
-              {task.check
+                {task.check
                 ?<input type="submit" value="Delete" onClick={() => this.deleteTask(index)}/>
                 :<span/>}
+                <img src="https://www.google.fr/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwjCn8aJ9c3YAhUHXRQKHeOTDZAQjRwIBw&url=https%3A%2F%2Fgiphy.com%2Fartists&psig=AOvVaw2zvhZsN8shXh9Nq3EuL5yr&ust=1515691523860234"/>
               </div>
             ))}
           </div>
