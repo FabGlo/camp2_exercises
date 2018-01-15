@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Link renders correctly 1`] = `
+<div>
+  <h1>
+    Products
+  </h1>
+  <table>
+    <thead>
+      <tr>
+        <th
+          onClick={[Function]}
+        >
+          ID
+        </th>
+        <th
+          onClick={[Function]}
+        >
+          Title
+        </th>
+        <th
+          onClick={[Function]}
+        >
+          Price
+        </th>
+      </tr>
+    </thead>
+  </table>
+</div>
+`;

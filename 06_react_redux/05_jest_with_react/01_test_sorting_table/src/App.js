@@ -4,7 +4,7 @@ import _ from "underscore";
 function Row(props) {
   return (
     <tr>
-      <td>{props.decathlon_id}</td>
+      <td name="dktid">{props.decathlon_id}</td>
       <td>{props.title}</td>
       <td>{props.price}</td>
     </tr>
@@ -38,16 +38,19 @@ class App extends Component {
       sortedLines.reverse();
     }
     return (
-      <table>
-        <thead>
-          <tr>
-            <th onClick={() => this.filter("decathlon_id")}>ID</th>
-            <th onClick={() => this.filter("title")}>Title</th>
-            <th onClick={() => this.filter("price")}>Price</th>
-          </tr>
-        </thead>
-        {sortedLines.map(Row)}
-      </table>
+      <div>
+      <h1>Products</h1>
+        <table>
+          <thead>
+            <tr>
+              <th onClick={() => this.filter("decathlon_id")}>ID</th>
+              <th onClick={() => this.filter("title")}>Title</th>
+              <th onClick={() => this.filter("price")}>Price</th>
+            </tr>
+          </thead>
+          {sortedLines.map(Row)}
+        </table>
+      </div>
     );
   }
 }

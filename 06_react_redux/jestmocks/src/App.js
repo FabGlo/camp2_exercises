@@ -4,6 +4,15 @@ const fetch = require ("node-fetch");
 const API_KEY= process.env.REACT_APP_OPEN_WEATHER_KEY;
 
 
+function loadTemperature(fetch){
+  return fetch(
+    `https://api.openweathermap.org/data/2.5/weather?q=rennes,fr&APPID=${API_KEY}&units=metric`,
+    {method: "GET"}
+  )
+    .then(res => res.json())
+    .then(res => res.main.temp)
+  }
+
 class App extends React.Component {
   constructor(props){
     super(props);
@@ -12,14 +21,10 @@ class App extends React.Component {
     }
   }
   componentDidMount(){
-    fetch(
-    `https://api.openweathermap.org/data/2.5/weather?q=rennes,fr&APPID=${API_KEY}&units=metric`,
-    {method: "GET"}
-  )
-    .then(res => res.json())
+    loadTemperature(fetch)
     .then((res) => {
       this.setState({
-        temp: res.main.temp,
+        temp: res,
       });
     },
     (error)=>{
@@ -38,3 +43,4 @@ class App extends React.Component {
 }
 
 export default App;
+export {loadTemperature}
