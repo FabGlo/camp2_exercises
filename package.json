@@ -24,7 +24,8 @@
     "pg": "^7.4.0",
     "phoenix-channels": "^1.0.0",
     "request": "^2.83.0",
-    "ruby": "^0.6.1"
+    "ruby": "^0.6.1",
+    "ws": "^4.0.0"
   },
   "devDependencies": {
     "jest": "^21.2.1"

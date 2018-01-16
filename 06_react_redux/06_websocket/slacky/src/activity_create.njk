@@ -1,0 +1,48 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+<div class="jumbotron">
+  <h1 class="display-4">Start a new activity</h1>
+</div>
+
+<form method="POST" action="/activities/create">
+  <div class="form-group">
+    <label for="formGroupExampleInput">Activity title</label>
+    <input type="text" name="title" required= "required" placeholder="Activity Title" class="form-control" id="formGroupExampleInput">
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">Description</label>
+    <input type="text" name="description" placeholder="Activity description"class="form-control" id="formGroupExampleInput2">
+  </div>
+  <div id="attendee" class="form-group">
+    <label for="formGroupExampleInput2">Name of an attendee</label>
+    <input type="text" name="attendee[]" required= "required" placeholder="Attendee name" class="form-control mb-4">
+  </div>
+
+  <script type="text/javascript" >
+     const div = document.getElementById('attendee');
+     function addInput(name,style) {
+       const input = document.createElement("input");
+       input.name = name;
+       input.classList.add(style);
+       input.placeholder = "Attendee name";
+       input.required = "required";
+       div.appendChild(input);
+     }
+     function addField() {
+         addInput("attendee[]","form-control");
+         div.appendChild(document.createElement("br"));
+     }
+   </script>
+   <div><button type="button" class="btn btn-info  mb-4" onclick="addField()" >Add Attendee</button>
+   </div>
+
+
+  <button type="submit" class="btn btn-success">
+    Create Activity!
+  </button>
+  </form>
+
+
+
+{% endblock %}
