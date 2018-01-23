@@ -1,14 +1,12 @@
 {
-  "name": "jestmocks",
+  "name": "route-project",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "node-fetch": "^1.7.3",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-scripts": "1.0.17",
-    "request": "^2.83.0",
-    "watchman": "^1.0.0"
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
